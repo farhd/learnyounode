@@ -1,9 +1,9 @@
 var net = require('net')
-var port = process.argv[2]
-var server = net.createServer(function (socket) {
+var port = Number(process.argv[2])
+
+net.createServer(function (socket) {
 	socket.end(now() + '\n')
-})
-server.listen(port);
+}).listen(port);
 
 function now() {
 	var date = new Date()
